@@ -1,0 +1,35 @@
+---
+description: Enforce component-per-folder structure and file organization
+alwaysApply: true
+---
+
+# Component Folder Structure
+
+- Each component must be in its own folder named with the component name.
+- The component entry file must be `index.tsx`.
+- Co-locate related files inside the same component folder.
+
+# Required/Preferred Files
+
+- `index.tsx` -> component implementation and exported component.
+- `styles.ts` or `styles.css` -> component styles.
+- `consts.ts` -> static labels, arrays, config, and constants.
+- `utils.ts` -> component-specific pure helper functions.
+- `types.ts` -> shared types/interfaces when the component grows.
+
+# Usage Rules
+
+- Avoid placing component-specific constants or utils in unrelated global files.
+- Keep imports relative and local-first (component folder files first, then shared modules).
+- If a helper/style/const is reused by multiple components, move it to a shared module.
+
+# Example
+
+```text
+src/components/Navbar/
+  index.tsx
+  styles.ts
+  consts.ts
+  utils.ts
+  types.ts
+```

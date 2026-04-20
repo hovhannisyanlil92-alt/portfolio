@@ -1,0 +1,22 @@
+---
+alwaysApply: true
+---
+# Quality Checks
+
+- After meaningful edits, run a project check (`pnpm build` at minimum).
+- Fix lint/type issues introduced by current changes before finishing.
+- Do not break existing sections while updating one component.
+- Keep behavior intentionally static unless functionality was requested.
+
+# Change Safety
+
+- Do not remove user content or assets unless requested.
+- Keep edits scoped to the request; avoid unrelated refactors.
+- Prefer small, testable changes and verify after each set of edits.
+
+# Example
+
+```bash
+# Standard verification flow
+pnpm build
+```

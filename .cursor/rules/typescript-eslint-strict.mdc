@@ -1,0 +1,31 @@
+---
+description: Enforce strict TypeScript and forbid ESLint disable comments
+alwaysApply: true
+---
+
+# Strict TypeScript + ESLint
+
+- Always write TypeScript in strict mode style; avoid `any` unless absolutely unavoidable.
+- Prefer explicit types for props, function params, returns, and shared data structures.
+- Handle `undefined` and `null` safely with proper guards.
+- Do not bypass type safety with unsafe casts unless there is a clear, documented reason.
+
+# ESLint Policy
+
+- Never add `eslint-disable`, `eslint-disable-next-line`, or `@ts-ignore` as a shortcut.
+- Fix the real issue instead of suppressing warnings/errors.
+- Keep files free of unused imports, variables, and dead code.
+
+# Example
+
+```tsx
+// Good: typed props and no suppression comments
+type UserCardProps = {
+  name: string
+  age?: number
+}
+
+function UserCard({ name, age }: UserCardProps) {
+  return <p>{age ? `${name} (${age})` : name}</p>
+}
+```

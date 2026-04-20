@@ -1,0 +1,35 @@
+---
+description: Code style standards for this React TypeScript portfolio
+alwaysApply: true
+---
+
+# Code Style
+
+- Write components and hooks in TypeScript with explicit, readable types.
+- Keep components focused; extract repeated UI or logic into reusable components.
+- Use clear names for files, components, props, and CSS classes.
+- Prefer simple, predictable JSX over deeply nested markup.
+- Keep imports tidy and remove unused code before finishing.
+- No inline styles
+
+# UI Conventions
+
+- Use Ant Design components first, then extend with CSS classes for custom design.
+- Keep visual consistency with existing spacing, typography, and color patterns.
+- For responsive behavior, follow existing breakpoints and avoid one-off hacks.
+
+# Example
+
+```tsx
+// Good: clear props + focused component
+type SectionTitleProps = { title: string; subtitle?: string }
+
+function SectionTitle({ title, subtitle }: SectionTitleProps) {
+  return (
+    <header>
+      <h2>{title}</h2>
+      {subtitle ? <p>{subtitle}</p> : null}
+    </header>
+  )
+}
+```
