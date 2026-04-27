@@ -6,6 +6,7 @@ import { getStatKey } from './utils'
 
 function About() {
   return (
+    <div className='aboutSection'>
     <section id="about" className={aboutStyles.section}>
       <div className={aboutStyles.illustration}>
         <img src={aboutPhoto} alt={ABOUT_TEXT.imageAlt} className={aboutStyles.image} />
@@ -24,6 +25,7 @@ function About() {
         </Row>
       </div>
     </section>
+    </div>
   )
 }
 

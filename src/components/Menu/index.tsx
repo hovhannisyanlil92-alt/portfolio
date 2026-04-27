@@ -1,15 +1,24 @@
 import { MENU_ITEMS } from './consts'
 import { menuStyles } from './styles'
-import { getMenuItemClassName } from './utils'
+import { NavLink } from 'react-router-dom'
+
 
 function Menu() {
   return (
     <nav className={menuStyles.nav}>
       {MENU_ITEMS.map((item) => (
-        <a key={item.href} className={getMenuItemClassName(item, menuStyles.active)} href={item.href}>
+        <NavLink 
+        key={item.href} 
+        className={({isActive}) => 
+          isActive
+        ? `${menuStyles.link} ${menuStyles.active}`
+        : menuStyles.link
+        } 
+        to={item.href}>
           {item.label}
-        </a>
+        </NavLink>
       ))}
+      
     </nav>
   )
 }

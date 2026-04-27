@@ -10,6 +10,7 @@ import homePhoto from '../../assets/home-photo.png'
 import { HOME_TEXT } from './consts'
 import { homeStyles } from './styles'
 import { buildFullName } from './utils'
+import { Link } from 'react-router-dom'
 
 function Home() {
   const fullName = buildFullName(HOME_TEXT.firstName, HOME_TEXT.lastName)
@@ -28,9 +29,11 @@ function Home() {
         </Typography.Title>
         <Typography.Paragraph className={homeStyles.description}>{HOME_TEXT.description}</Typography.Paragraph>
         <div className={homeStyles.cta}>
-          <Button type="primary" size="large" icon={<DownloadOutlined />}>
-            {HOME_TEXT.cvLabel}
-          </Button>
+          <Link to="/cv">
+            <Button type="primary" size="large" icon={<DownloadOutlined />}>
+              {HOME_TEXT.cvLabel} 
+            </Button>
+          </Link>
           <Button size="large" icon={<MailOutlined />}>
             {HOME_TEXT.contactLabel}
           </Button>
