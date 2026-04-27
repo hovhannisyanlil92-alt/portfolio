@@ -1,4 +1,4 @@
-import { Row, Col, Typography, Tag, Button } from "antd";
+import { Row, Col, Typography, Button } from "antd";
 import {
   MailOutlined,
   GithubOutlined,
