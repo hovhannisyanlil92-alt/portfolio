@@ -9,11 +9,6 @@ function Menu() {
       {MENU_ITEMS.map((item) => (
         <NavLink 
         key={item.href} 
-        className={({isActive}) => 
-          isActive
-        ? `${menuStyles.link} ${menuStyles.active}`
-        : menuStyles.link
-        } 
         to={item.href}>
           {item.label}
         </NavLink>

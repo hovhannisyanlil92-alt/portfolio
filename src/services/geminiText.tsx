@@ -31,7 +31,7 @@ function GeminiText() {
         style={{ marginTop: 10 }}>
         Send
       </Button>
-      <p style={{ marginTop: 20 }}><ReactMarkdown>{response}</ReactMarkdown></p>
+      <div style={{ marginTop: 20 }}><ReactMarkdown>{response}</ReactMarkdown></div>
     </div>
   );
 }

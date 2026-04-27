@@ -6,7 +6,7 @@ import {
   DownloadOutlined,
 } from "@ant-design/icons";
 import { CV_TEXT } from "../../data/cv";
-import { styles } from "./cvpage";
+import { styles } from "./CVPageStyles";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import ReactMarkdown from "react-markdown"
