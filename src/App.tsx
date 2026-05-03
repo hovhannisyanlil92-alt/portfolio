@@ -13,7 +13,7 @@ import Navbar from './components/Navbar'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import GeminiText from './services/geminiText'
-import CVPage from '../src/components/CVPage/cvpage'
+import CVPage from './components/CVPage/CVPage'
 import './App.css'
 
 
