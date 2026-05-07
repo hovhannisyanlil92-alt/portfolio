@@ -10,3 +10,5 @@ export const CONTACT_TEXT = {
   messagePlaceholder: 'Your Message',
   submit: 'Send Message',
 }
+
+

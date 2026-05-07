@@ -45,7 +45,7 @@ function Home() {
         </div>
       </div>
       <div className={homeStyles.right}>
-        <div className={homeStyles.blob} />
+        <div />
         <div className={homeStyles.avatar}>
           <img src={homePhoto} alt={HOME_TEXT.photoAlt} className={homeStyles.image} />
         </div>

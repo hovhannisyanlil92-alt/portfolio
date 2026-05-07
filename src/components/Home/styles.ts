@@ -8,7 +8,6 @@ export const homeStyles = {
   cta: 'hero-cta',
   socials: 'social-row',
   right: 'hero-right',
-  blob: 'portrait-blob',
   avatar: 'portrait-avatar',
   image: 'portrait-image',
 } as const

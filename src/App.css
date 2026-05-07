@@ -427,4 +427,75 @@
     align-items: flex-start;
     flex-direction: column;
   }
+
+    /* The main container holding all 3 parts */
+  .contact-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns them to the top */
+    gap: 40px; /* Space between the elements */
+    padding: 60px 0;
+  }
+
+  /* 1. Left side (Text) */
+  .contact-left {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  /* 2. Middle (The Card Form) */
+  .contact-form {
+    flex: 1.5; 
+    min-width: 400px;
+  }
+
+  /* 3. Right side (The Image) */
+  .contact-right {
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact-right img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Responsive: Stack them on top of each other on mobile */
+  @media (max-width: 992px) {
+    .contact-section {
+      flex-direction: column;
+      align-items: center;
+    }
+    .contact-form, .contact-left {
+      width: 100%;
+    }
+  }
+
+  /* Responsiveness helper classes */
+  @media (max-width: 768px) {
+    .hero-img {
+      display: none !important; /* Hide 3D girl on mobile */
+    }
+    .hide-on-mobile {
+      display: none !important;
+    }
+    /* Adjust markdown text for mobile */
+    .markdown-sidebar p, .markdown-sidebar li {
+      font-size: 13px !important;
+    }
+  }
+
+  /* Sidebar markdown styling for list items (skills) */
+  .markdown-sidebar ul {
+    padding-left: 15px;
+    color: rgba(255,255,255,0.8);
+    list-style-type: circle;
+  }
+  .markdown-sidebar li {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
 }
