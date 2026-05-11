@@ -26,7 +26,7 @@ export const SKILL_GROUPS = [
     title: 'AI',
     groupIcon: 'https://cdn-icons-png.flaticon.com/512/2103/2103633.png',
     items: [
-      { name: 'Cursor', icon: 'https://cdn.simpleicons.org/cursor/3686' },
+      { name: 'Cursor', icon: 'https://cdn.simpleicons.org/cursor' },
       { name: 'Stitch', icon: 'https://img.shields.io/badge/stitch-000000?style=for-the-badge&logo=google&logoColor=white' },
     ],
   },

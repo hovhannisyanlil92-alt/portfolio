@@ -50,6 +50,11 @@ function Home() {
           <img src={homePhoto} alt={HOME_TEXT.photoAlt} className={homeStyles.image} />
         </div>
       </div>
+      <div>
+        <br /><br /><br />
+        <iframe width="560" height="315" src="../../src/assets/Avatar-Video.mp4" title="Avatar IV Video" allow="encrypted-media; fullscreen;" allowfullscreen ></iframe>
+       
+      </div>
     </section>
   )
 }

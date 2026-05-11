@@ -1,12 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Typography, Avatar, Button, Input, Space, Card, Divider } from 'antd';
 import { 
-  SendOutlined, GithubOutlined, LinkedinOutlined, InstagramOutlined, PlusOutlined, 
-  SunOutlined, UserOutlined 
+  SendOutlined, GithubOutlined, LinkedinOutlined, InstagramOutlined, PlusOutlined, UserOutlined 
 } from '@ant-design/icons';
 import ReactMarkdown from 'react-markdown';
 import { sendMessageToGemini } from './gemini';
 import { styles } from './styles';
+import '../App.css'
 
 const { Title, Text, Paragraph } = Typography;
 
@@ -17,7 +17,7 @@ interface Message {
 
 export default function GeminiChat() {
   const initialMessage: Message[] = [
-    { role: 'ai', text: "Hello! 👋 I'm Gemini. I can tell you about Lilit's background, skills, and more. What would you like to know?" }
+    { role: 'ai', text: "I can tell you about my background, skills, and more. What would you like to know?" }
   ];
 
   const [input, setInput] = useState("");
@@ -81,7 +81,7 @@ export default function GeminiChat() {
       <main style={styles.mainContent}>
         <header style={styles.header}>
           <div>
-            <Title level={4} style={{ margin: 0 }}>Gemini Chat</Title>
+            <Title level={4} style={{ margin: 0 }}>Chat with me</Title>
             <Text type="secondary" style={{ fontSize: '12px' }}>Get to know more about me</Text>
           </div>
           <Space>
@@ -93,12 +93,27 @@ export default function GeminiChat() {
 
         <div style={styles.chatContainer} ref={scrollRef}>
           {messages.length === 1 && (
-             <div style={styles.welcomeBox}>
-                <div style={{ fontSize: '48px', marginBottom: '16px' }}>✨</div>
-                <Title level={2}>Hi! I'm Gemini</Title>
-                <Text type="secondary" style={{ fontSize: '16px' }}>I'm here to help you learn more about Lilit.</Text>
+             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: '24px',  padding: '40px',boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)', marginBottom: '24px'}} className="welcome-container">
+              <div className="welcome-text" style={{flex: "1.2"}}>
+                {/* <div style={{ fontSize: '48px', marginBottom: '16px' }}>✨</div> */}
+                <Title level={2} style={{ margin: 0, fontSize: '28px', color: '#1a1a1a' }}>Hi! I'm Lilit</Title>
+                <Text type="secondary" style={{ fontSize: '16px', lineHeight: '1.5', display: 'block', maxWidth: '350px' }}>
+                  "I'm a Frontend Developer. Feel free to ask me anything about my background, skills, or projects!
+                </Text>
              </div>
+              <div className="welcome-image" style={{flex: '1', display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
+                <img 
+                  src="/src/assets/cv-sidebar.png"  
+                  alt="Lilit AI Illustration" 
+                  style={{ width: '100%', maxWidth: '500px', height: 'auto', display: 'block' }}
+                />
+              </div>
+             </div>
+             
           )}
+
+
+
 
           {messages.map((msg, index) => (
             <div key={index} style={msg.role === 'ai' ? styles.aiBubble : styles.userBubble}>
@@ -124,54 +139,25 @@ export default function GeminiChat() {
           .sidebar-container { display: none !important; }
           .gemini-chat-page main { padding: 20px !important; }
         }
+        @media (max-width: 768px) {
+            .welcome-container {
+              flex-direction: column-reverse; 
+              text-align: center;
+              padding: 20px;
+            }
+            
+            .welcome-text {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+            
+            .welcome-image {
+              justify-content: center;
+              margin-bottom: 20px;
+            }
+        }
       `}</style>
     </div>
   );
 }
-
-
-
-
-
-
-
-
-// import { Input, Button } from "antd";
-// import { useState } from "react";
-// import { sendMessageToGemini } from './gemini';
-// import ReactMarkdown from "react-markdown"
-
-
-// const { TextArea } = Input;
-
-// function GeminiText() {
-//   const [input, setInput] = useState("");
-//   const [response, setResponse] = useState("");
-
-//   const handleSend = async () => {
-//     const res = await sendMessageToGemini(input);
-//     setResponse(res);
-//   };
-
-//   return (
-//     <div style={{ padding: 20, maxWidth:800, margin: "40px auto" }} className="gemini">
-//       <h2>Gemini Chat</h2>
-
-//       <TextArea
-//         rows={4}
-//         value={input}
-//         onChange={(e) => setInput(e.target.value)}
-//         placeholder="Ask here..."
-//       />
-
-//       <Button type="primary" 
-//         onClick={handleSend} 
-//         style={{ marginTop: 10 }}>
-//         Send
-//       </Button>
-//       <div style={{ marginTop: 20 }}><ReactMarkdown>{response}</ReactMarkdown></div>
-//     </div>
-//   );
-// }
-// export default GeminiText;
-
