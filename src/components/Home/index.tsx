@@ -6,6 +6,7 @@ import {
   SendOutlined,
 } from '@ant-design/icons'
 import { Button, Tag, Typography } from 'antd'
+import homeVideo from '../../assets/Avatar-Video.mp4'
 import homePhoto from '../../assets/home-photo.png'
 import { HOME_TEXT } from './consts'
 import { homeStyles } from './styles'
@@ -52,7 +53,7 @@ function Home() {
       </div>
       <div>
         <br /><br /><br />
-        <iframe width="560" height="315" src="../../src/assets/Avatar-Video.mp4" title="Avatar IV Video" allow="encrypted-media; fullscreen;" allowfullscreen ></iframe>
+        <iframe width="560" height="315" src={homeVideo} title="Avatar IV Video" allow="encrypted-media; fullscreen;" allowfullscreen ></iframe>
        
       </div>
     </section>
