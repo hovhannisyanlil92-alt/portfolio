@@ -181,13 +181,7 @@
   margin: 0;
 }
 
-.aboutSection,
-.gemini {
- min-height: 80vh;
-}
-
 .skills-section,
-.projects-section,
 .contact-section {
   margin-top: 28px;
   min-height: 100vh;
@@ -401,6 +395,28 @@
 .portfolio-page.dark-mode .footer p,
 .portfolio-page.dark-mode .footer .brand {
   color: #e5e9ff !important;
+}
+
+.cover {
+  height: 200px; 
+  overflow: hidden; 
+  background: #f0f0f0;
+}
+
+.projectImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transition: transform 0.4s ease; 
+}
+
+.imageWrapper:hover .projectImg {
+  transform: scale(1.1); 
+  cursor: pointer;
+}
+
+.imageWrapper:hover .cover {
+  filter: brightness(0.8);
 }
 
 @media (max-width: 992px) {

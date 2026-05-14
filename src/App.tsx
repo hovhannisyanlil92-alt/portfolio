@@ -23,7 +23,7 @@ function App() {
 
   return (
     
-    <div className={`portfolio-page ${isDarkMode ? 'dark-mode' : ''}`}>
+    <div id='cover-photo' className={`portfolio-page ${isDarkMode ? 'dark-mode' : ''}`}>
       <Navbar isDarkMode={isDarkMode} onToggleTheme={() => setIsDarkMode((prev) => !prev)} />
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -34,8 +34,9 @@ function App() {
           <Route path="/geminiText" element={<GeminiText/>}></Route>
           <Route path="/cv" element={<CVPage/>}></Route>
         </Routes>
-     
-     
+       
+       
+
       <footer className="footer">
         <div className="container footer-inner">
           <span className="brand">LH</span>

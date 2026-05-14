@@ -6,17 +6,19 @@ import {
   SendOutlined,
 } from '@ant-design/icons'
 import { Button, Tag, Typography } from 'antd'
-import homeVideo from '../../assets/Avatar-Video.mp4'
 import homePhoto from '../../assets/home-photo.png'
 import { HOME_TEXT } from './consts'
 import { homeStyles } from './styles'
 import { buildFullName } from './utils'
 import { Link } from 'react-router-dom'
+import VideoAvatar from '../../videoAvatar/index'
+import DId from '../../d-id/index'
 
 function Home() {
   const fullName = buildFullName(HOME_TEXT.firstName, HOME_TEXT.lastName)
 
   return (
+    <>
     <section id="home" className={homeStyles.section}>
       <div className={homeStyles.left}>
         <Tag className={homeStyles.tag}>{HOME_TEXT.greeting}</Tag>
@@ -40,9 +42,22 @@ function Home() {
           </Button>
         </div>
         <div className={homeStyles.socials}>
-          <Button shape="circle" icon={<GithubOutlined />} />
-          <Button shape="circle" icon={<LinkedinOutlined />} />
-          <Button shape="circle" icon={<SendOutlined />} />
+          <Button 
+            shape="circle" 
+            icon={<GithubOutlined />} 
+            href="https://github.com/hovhannisyanlil92-alt"
+            target="_blank" 
+          />
+          <Button 
+            href="https://t.me/LilitHovhannisyan_dev"
+            target="_blank" 
+            shape="circle" 
+            icon={<SendOutlined />} 
+          />
+          <Button 
+            href='https://www.linkedin.com/in/lilit-hovhannisyan-729508211'
+            target="_blank"
+            shape="circle" icon={<LinkedinOutlined />} />
         </div>
       </div>
       <div className={homeStyles.right}>
@@ -51,12 +66,13 @@ function Home() {
           <img src={homePhoto} alt={HOME_TEXT.photoAlt} className={homeStyles.image} />
         </div>
       </div>
-      <div>
-        <br /><br /><br />
-        <iframe width="560" height="315" src={homeVideo} title="Avatar IV Video" allow="encrypted-media; fullscreen;" allowfullscreen ></iframe>
-       
-      </div>
+     
     </section>
+      <div>
+        <VideoAvatar />
+        <DId />
+      </div>
+    </>
   )
 }
 

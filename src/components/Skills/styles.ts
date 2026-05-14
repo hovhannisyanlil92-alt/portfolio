@@ -54,14 +54,14 @@ export const skillsStyles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: '60px', 
+    width: '50px', 
     textAlign: 'center',
     marginBottom: '10px',
   } as CSSProperties,
 
   iconBox: {
-    width: '32px',
-    height: '32px',
+    width: '30px',
+    height: '30px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -75,7 +75,7 @@ export const skillsStyles = {
   } as CSSProperties,
 
   skillName: {
-    fontSize: '12px', 
+    fontSize: '10px', 
     color: '#8c8c8c',
     lineHeight: '1.2',
   } as CSSProperties,
@@ -83,7 +83,7 @@ export const skillsStyles = {
   grid: {
     display: 'flex',
     flexWrap: 'wrap',
-    gap: '13px', 
+    gap: '8px', 
     justifyContent: 'flex-start',
   } as CSSProperties,
 };

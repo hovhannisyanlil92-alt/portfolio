@@ -4,7 +4,7 @@ export const CV_TEXT = `
 ### Frontend Developer
  
 📧 lilit.hovhannisyan.dev@gmail.com  
-🔗 GitHub | LinkedIn  
+🔗 https://github.com/hovhannisyanlil92-alt | LinkedIn  
 
 ---
 
@@ -55,7 +55,11 @@ Web Developer / Trainer - Profit Development Company
 ---
 
 ##  Education
+AI-Enhanced Frontend Development - AGBU (2026)
+
 ReactJS Developer – Bitschool (2021)  
+
+Graphic Design - Adobe Photoshop, Adobe Illustrator, CorelDRAW - BASE studio (2020)
 
 FullStack Developer – Profit Development Company (2019)  
 

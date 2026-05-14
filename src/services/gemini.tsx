@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LILIT_CONTEXT } from "./constants"; 
+import { LILIT_CONTEXT } from "../data/constants"; 
 
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 

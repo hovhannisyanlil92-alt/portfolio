@@ -5,9 +5,9 @@ export const ABOUT_TEXT = {
     "I'm a Frontend Developer who loves turning ideas into beautiful and functional web applications. I focus on writing clean, efficient code and creating seamless user experiences.",
   imageAlt: 'About section illustration',
   stats: [
-    { value: '2+ Years', label: 'Experience' },
-    { value: '15+ Completed', label: 'Projects' },
-    { value: '10+ Worldwide', label: 'Clients' },
+    // { value: '2+ Years', label: 'Experience' },
+    // { value: '15+ Completed', label: 'Projects' },
+    // { value: '10+ Worldwide', label: 'Clients' },
     { value: 'Freelance', label: 'Availability' },
   ],
 } as const

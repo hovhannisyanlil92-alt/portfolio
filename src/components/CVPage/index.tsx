@@ -11,6 +11,7 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { CV_TEXT } from '../../data/cv'; 
 import { styles } from './CVPageStyles';
+import cvPage from '../../assets/cvPage.png'
 
 const { Title, Text, Paragraph } = Typography;
 
@@ -129,7 +130,7 @@ export default function CVPage() {
                    <Text style={{fontSize: '12px', marginLeft: '10px'}}><GithubOutlined /> github.com</Text>
                 </div>
               </div>
-              <img src="./src/assets/cvPage.png" style={styles.heroImage} className="hero-img" alt="3d avatar" />
+              <img src={cvPage} style={styles.heroImage} className="hero-img" alt="3d avatar" />
             </div>
 
             {/* ALL SECTIONS */}
