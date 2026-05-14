@@ -25,7 +25,6 @@ const DigitalTwinSection = () => {
     <div className="digital-twin-container">
       <Row gutter={[48, 32]} align="middle" justify="center">
         
-        {/* Video Column - Narrower width (md={7}) */}
         <Col xs={24} md={7} lg={7}>
           <div className="video-frame-wrapper">
 
@@ -55,7 +54,6 @@ const DigitalTwinSection = () => {
           </div>
         </Col>
 
-        {/* Text Column - Wider width (md={15}) */}
         <Col xs={24} md={15} lg={14}>
           <div className="content-side">
             <Space direction="vertical" size="large">
@@ -73,16 +71,6 @@ const DigitalTwinSection = () => {
                 communication, allowing me to present my expertise and projects in a more 
                 engaging, dynamic way.
               </Paragraph>
-
-              {/* <div className="tech-details">
-                <Text strong className="tech-label">Core Technologies:</Text>
-                <div className="tags-container">
-                  <span className="custom-tag">React.js</span>
-                  <span className="custom-tag">AI Video Synthesis</span>
-                  <span className="custom-tag">Ant Design</span>
-                  <span className="custom-tag">Neural Networks</span>
-                </div>
-              </div> */}
             </Space>
           </div>
         </Col>
