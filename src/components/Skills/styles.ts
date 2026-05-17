@@ -11,7 +11,7 @@ export const skillsStyles = {
     color: '#6366f1',
     fontWeight: 800,
     letterSpacing: '1px',
-    fontSize: '12px',
+    fontSize: 'clamp(11px, 0.9vw, 12px)',
     display: 'block',
     marginBottom: '8px',
     textTransform: 'uppercase',
@@ -75,7 +75,7 @@ export const skillsStyles = {
   } as CSSProperties,
 
   skillName: {
-    fontSize: '10px', 
+    fontSize: 'clamp(9px, 0.8vw, 11px)',
     color: '#8c8c8c',
     lineHeight: '1.2',
   } as CSSProperties,

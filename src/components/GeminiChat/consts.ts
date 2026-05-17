@@ -1,3 +1,28 @@
+import type { ChatMessage } from './types';
+
+export const GEMINI_UI = {
+  name: 'Lilit Hovhannisyan',
+  role: 'Frontend Developer',
+  aboutText:
+    'Passionate Frontend Developer creating seamless user experiences with modern UI/UX principles.',
+  sidebarHint: '✨ Ask me anything about my experience or skills!',
+  chatTitle: 'Chat with me',
+  chatSubtitle: 'Get to know more about me',
+  newChatLabel: 'New Chat',
+  welcomeTitle: "Hi! I'm Lilit",
+  welcomeDescription:
+    "I'm a Frontend Developer. Feel free to ask me anything about my background, skills, or projects!",
+  inputPlaceholder: 'Ask me anything...',
+  thinkingLabel: 'Gemini is thinking...',
+  avatarSrc: './src/assets/about-photo-gemini.png',
+  welcomeImageSrc: '/src/assets/cv-sidebar.png',
+} as const;
+
+export const INITIAL_MESSAGE: ChatMessage = {
+  role: 'ai',
+  text: 'I can tell you about my background, skills, and more. What would you like to know?',
+};
+
 export const LILIT_CONTEXT = `
 You are Lilit Hovhannisyan. Your job is to answer questions from visitors of my portfolio website.
 Always detect the user's language: if they ask in Armenian, answer in Armenian; if they ask in English, answer in English.

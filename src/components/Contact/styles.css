@@ -1,0 +1,124 @@
+.contact-page-section {
+  padding: 80px 5%;
+  background: #fff;
+}
+
+.contact-eyebrow {
+  color: #6366f1;
+  font-weight: 700;
+  font-size: clamp(11px, 0.9vw, 12px);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.contact-title {
+  font-size: clamp(24px, 2.6vw, 32px) !important;
+  font-weight: 800 !important;
+  margin: 0 0 16px 0 !important;
+  color: #1f1f39 !important;
+}
+
+.contact-description {
+  color: #666 !important;
+  font-size: clamp(13px, 1vw, 15px);
+  margin-bottom: 32px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-icon-circle {
+  width: 44px;
+  height: 44px;
+  background: #eef2ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6366f1;
+  font-size: clamp(16px, 1.1vw, 19px);
+}
+
+.contact-form-wrapper {
+  padding: 20px;
+}
+
+.contact-page-section .contact-input,
+.contact-page-section .contact-input.ant-input,
+.contact-page-section textarea.contact-input {
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.contact-submit-btn {
+  height: 48px;
+  padding: 0 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-top: 24px;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-illustration {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+}
+
+.portfolio-page.dark-mode .contact-page-section {
+  background: #151a31;
+}
+
+.portfolio-page.dark-mode .contact-eyebrow {
+  color: #a7aeff;
+}
+
+.portfolio-page.dark-mode .contact-title {
+  color: #f0f2ff !important;
+}
+
+.portfolio-page.dark-mode .contact-description {
+  color: #b2b7d0 !important;
+}
+
+.portfolio-page.dark-mode .contact-info-label {
+  color: #e8ecff !important;
+}
+
+.portfolio-page.dark-mode .contact-page-section .ant-typography-secondary,
+.portfolio-page.dark-mode .contact-page-section .contact-info-item .ant-typography {
+  color: #b2b7d0 !important;
+}
+
+.portfolio-page.dark-mode .contact-icon-circle {
+  background: #1f2545;
+  color: #a7aeff;
+}
+
+.portfolio-page.dark-mode .contact-page-section .contact-input,
+.portfolio-page.dark-mode .contact-page-section .contact-input.ant-input,
+.portfolio-page.dark-mode .contact-page-section textarea.contact-input {
+  background: #10162e !important;
+  border-color: #323c69 !important;
+  color: #edf1ff !important;
+}
+
+.portfolio-page.dark-mode .contact-page-section .contact-input::placeholder,
+.portfolio-page.dark-mode .contact-page-section textarea.contact-input::placeholder {
+  color: #9aa3cd;
+}
+
+.portfolio-page.dark-mode .contact-form-wrapper {
+  background: #1a1f38;
+  border: 1px solid #2f365f;
+  border-radius: 16px;
+}

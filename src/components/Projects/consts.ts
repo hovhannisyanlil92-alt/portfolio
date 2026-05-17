@@ -4,6 +4,7 @@ export type Project = {
   tags: string[]
   link: string
   image: string
+  gitHub: string
 }
 
 export const PROJECTS_TEXT = {
@@ -14,27 +15,28 @@ export const PROJECTS_TEXT = {
 
 export const PROJECTS: Project[] = [
   {
-    title: 'E-Commerce Dashboard',
+    title: 'Wedding Invitation Website',
     description: 'Admin dashboard for managing products, orders and customers.',
-    tags: ['HTML/CSS', 'JavaScript', 'ReactJS', 'React-Bootstr'],
-    link: 'https://erikelena.github.io/',
-    image: '../../assets/hero.png',
-    // link: 'https://github.com/Lilit-92/demoApp.git',
-    // image: 'https://lilit-92.github.io/assets/img/portfolio/todo.png',
+    tags: ['HTML/CSS', 'JavaScript', 'JQuery', 'Bootstrap'],
+    link: 'https://elinamartirosyan20.github.io/',
+    gitHub: 'https://github.com/ElinaMartirosyan20/ElinaMartirosyan20.github.io.git',
+    image: './src/assets/projectImg3.png',
   },
   {
-    title: 'Task Management App',
+    title: 'Wedding Invitation Website',
     description: 'A productivity app to organize tasks and boost workflow.',
-    tags: ['Next.js', 'TypeScript', 'Ant Design'],
+    tags: ['React', 'TypeScript', 'Ant Design'],
     link: 'https://andranikgayane.github.io/',
-    image: '../../assets/hero.png',
+    gitHub: 'https://github.com/hovhannisyanlil92-alt/portfolio',
+    image: './src/assets/projectImg2.png',
   },
   {
     title: 'Portfolio Website',
     description: 'Personal portfolio website built with React and modern UI.',
-    tags: ['React', 'Ant Design', 'Framer Motion'],
-    link: 'https://erikelena.github.io/',
-    image: '../../assets/hero.png',
+    tags: ['React', 'Ant Design', 'Gemini API'],
+    link: 'https://portfolio-one-steel-94.vercel.app/',
+    gitHub: 'https://github.com/hovhannisyanlil92-alt/portfolio',
+    image: './src/assets/projectImg1.png',
   },
 ]
 

@@ -1,0 +1,84 @@
+.mobile-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-menu-list a {
+  display: block;
+  padding: 14px 16px;
+  border-radius: 12px;
+  color: #565671;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mobile-menu-list a:hover,
+.mobile-menu-list a:focus-visible {
+  background: #f3f0ff;
+  color: #6654ff;
+  outline: none;
+}
+
+.mobile-menu-list a.active {
+  background: #eceaff;
+  color: #6654ff !important;
+  font-weight: 600;
+}
+
+.mobile-menu-list a.active:hover,
+.mobile-menu-list a.active:focus-visible {
+  background: #e4e0ff;
+  color: #6654ff !important;
+}
+
+.portfolio-page.dark-mode .mobile-menu-list a {
+  color: #c7c9df;
+}
+
+.portfolio-page.dark-mode .mobile-menu-list a:hover,
+.portfolio-page.dark-mode .mobile-menu-list a:focus-visible {
+  background: #1f2545;
+  color: #a7aeff;
+}
+
+.portfolio-page.dark-mode .mobile-menu-list a.active {
+  background: #2a3159;
+  color: #8f84ff;
+}
+
+.portfolio-page.dark-mode .mobile-menu-list a.active:hover,
+.portfolio-page.dark-mode .mobile-menu-list a.active:focus-visible {
+  background: #2a3159;
+  color: #8f84ff !important;
+}
+
+.mobile-menu-drawer .ant-drawer-header {
+  border-bottom: 1px solid #eceaff;
+}
+
+.mobile-menu-drawer .ant-drawer-title {
+  font-weight: 700;
+  color: #6654ff;
+}
+
+.portfolio-page.dark-mode .mobile-menu-drawer .ant-drawer-content {
+  background: #151a31;
+}
+
+.portfolio-page.dark-mode .mobile-menu-drawer .ant-drawer-header {
+  border-bottom-color: #2f365f;
+}
+
+.portfolio-page.dark-mode .mobile-menu-drawer .ant-drawer-title {
+  color: #8f84ff;
+}
+
+.portfolio-page.dark-mode .mobile-menu-drawer .ant-drawer-close {
+  color: #e8ecff;
+}

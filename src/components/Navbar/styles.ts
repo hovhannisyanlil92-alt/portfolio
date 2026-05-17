@@ -1,6 +1,7 @@
 export const navbarStyles = {
-  header: 'topbar container',
+  header: 'site-header',
+  inner: 'topbar container site-header-inner',
   brand: 'brand',
   actions: 'topbar-actions',
   menuToggle: 'menu-toggle',
-} as const
+} as const;

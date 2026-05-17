@@ -43,7 +43,8 @@ function Projects() {
               <div className={projectsStyles.actions}>
                 <Button type="text" icon={<GithubOutlined />} />
                 <Button 
-                href={project.link}
+                target='blank'
+                href={project.gitHub}
                 icon={<ArrowRightOutlined />} />
               </div>
             </Card>

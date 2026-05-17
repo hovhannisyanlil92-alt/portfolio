@@ -1,5 +1,6 @@
 
 .portfolio-page {
+  --site-header-height: 80px;
   min-height: 100vh;
   color: #1f1f39;
   background: linear-gradient(180deg, #f7f5ff 0%, #f6f6fb 25%, #f8f8fe 100%);
@@ -12,10 +13,10 @@
 }
 
 .topbar {
-  height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
 
 .brand {
@@ -25,6 +26,10 @@
 
 .menu-links {
   display: flex;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  justify-content: center;
   gap: 28px;
 }
 
@@ -32,12 +37,26 @@
   color: #565671;
   text-decoration: none;
   font-weight: 500;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-.menu-links .active {
+.menu-links a:hover {
   color: #6654ff;
-  border-bottom: 2px solid #6654ff;
-  padding-bottom: 2px;
+  border-bottom-color: #6654ff;
+}
+
+.menu-links a:focus-visible {
+  color: #6654ff;
+  border-bottom-color: #6654ff;
+  outline: none;
+}
+
+.menu-links a.active {
+  color: #6654ff !important;
+  border-bottom-color: #6654ff;
+  font-weight: 600;
 }
 
 .topbar-actions {
@@ -47,6 +66,15 @@
 
 .menu-toggle {
   display: none;
+}
+
+#home,
+#about,
+#video-avatar,
+#skills,
+#projects,
+#contact {
+  scroll-margin-top: var(--site-header-height, 80px);
 }
 
 .hero-section {
@@ -68,7 +96,7 @@
 
 .hero-title {
   margin: 0 !important;
-  font-size: clamp(44px, 7vw, 72px) !important;
+  font-size: clamp(38px, 6.2vw, 62px) !important;
   line-height: 0.95 !important;
   letter-spacing: -1px;
 }
@@ -161,7 +189,7 @@
 }
 
 .section-eyebrow {
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: #7f75c8;
@@ -271,7 +299,7 @@
 .footer-links {
   display: flex;
   gap: 14px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .portfolio-page.dark-mode {
@@ -297,12 +325,18 @@
   color: #c7c9df;
 }
 
+.portfolio-page.dark-mode .menu-links a:hover,
+.portfolio-page.dark-mode .menu-links a:focus-visible {
+  color: #a7aeff;
+  border-bottom-color: #a7aeff;
+}
+
 .portfolio-page.dark-mode .hero-title {
   color: #f8f9ff !important;
   text-shadow: 0 4px 18px rgba(20, 24, 45, 0.35);
 }
 
-.portfolio-page.dark-mode .menu-links .active {
+.portfolio-page.dark-mode .menu-links a.active {
   color: #8f84ff;
   border-bottom-color: #8f84ff;
 }
@@ -420,12 +454,20 @@
 }
 
 @media (max-width: 992px) {
+  .portfolio-page {
+    --site-header-height: 72px;
+  }
+
   .menu-links {
     display: none;
   }
 
   .menu-toggle {
     display: inline-flex;
+  }
+
+  .topbar .brand {
+    font-size: 1.35rem !important;
   }
 
   .hero-section,
@@ -514,4 +556,137 @@
     font-size: 12px;
     margin-bottom: 5px;
   }
+}
+
+/* Large screens — typography */
+@media (min-width: 992px) {
+  .portfolio-page {
+    font-size: 1rem;
+  }
+
+  .menu-links a {
+    font-size: 0.95rem;
+  }
+
+  .menu-links a.active {
+    color: #6654ff !important;
+    border-bottom: 3px solid #6654ff;
+    padding-bottom: 4px;
+    font-weight: 600;
+  }
+
+  .portfolio-page.dark-mode .menu-links a.active {
+    color: #8f84ff !important;
+    border-bottom-color: #8f84ff;
+  }
+
+  .brand.ant-typography {
+    font-size: 1.5rem !important;
+  }
+
+  .hero-title {
+    font-size: clamp(44px, 6.8vw, 72px) !important;
+  }
+
+  .role.ant-typography {
+    font-size: 1.25rem !important;
+  }
+
+  .hero-description {
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .intro-tag {
+    font-size: 0.85rem;
+  }
+
+  .section-eyebrow {
+    font-size: 12px;
+  }
+
+  .about-content h2.ant-typography,
+  .section-header h2.ant-typography,
+  .projects-head h2.ant-typography,
+  .video-avatar-section .section-header h2.ant-typography {
+    font-size: 1.9rem !important;
+  }
+
+  .stats-grid p {
+    font-size: 0.95rem;
+  }
+
+  .stats-grid strong {
+    font-size: 1.05rem;
+  }
+
+  .contact-left h2.ant-typography {
+    font-size: 1.9rem !important;
+  }
+
+  .contact-left p {
+    font-size: 0.95rem;
+  }
+
+  .project-card .ant-card-meta-title {
+    font-size: 1.05rem !important;
+  }
+
+  .project-card .ant-card-meta-description,
+  .project-card .ant-typography {
+    font-size: 0.9rem !important;
+  }
+
+  .tag-wrap .ant-tag {
+    font-size: 0.85rem;
+  }
+
+  .footer-inner p {
+    font-size: 0.95rem;
+  }
+
+  .footer-links {
+    font-size: 18px;
+  }
+
+  .portfolio-page .ant-btn {
+    font-size: 0.9rem;
+  }
+
+  .portfolio-page .ant-input,
+  .portfolio-page .ant-input-affix-wrapper {
+    font-size: 0.9rem;
+  }
+
+  .contact-info-label {
+    font-size: 0.9rem !important;
+  }
+
+  #skills .ant-typography h4 {
+    font-size: 1.15rem !important;
+  }
+
+  #skills .ant-typography h2 {
+    font-size: 1.9rem !important;
+  }
+
+  #contact .contact-title {
+    font-size: clamp(24px, 2.6vw, 32px) !important;
+  }
+
+  #contact .contact-description {
+    font-size: clamp(13px, 1vw, 15px) !important;
+  }
+
+  #skills .skills-skill-name {
+    font-size: 11px !important;
+  }
+
+  .video-avatar-description {
+    font-size: 0.95rem !important;
+  }
+}
+
+.contact-info-label {
+  font-size: 0.8rem;
 }

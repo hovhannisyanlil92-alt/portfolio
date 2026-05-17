@@ -1,103 +1,91 @@
-// import { SendOutlined } from '@ant-design/icons'
-// import { Button, Card, Divider, Input, Typography } from 'antd'
-// import { CONTACT_TEXT } from './consts'
-// import { contactStyles } from './styles'
-// import contactIcon from '../../assets/contact-icon.png'
-
-// function Contact() {
-//   return (
-//     <section id="contact" className={contactStyles.section}>
-//       <div className={contactStyles.left}>
-//         <span className={contactStyles.eyebrow}>{CONTACT_TEXT.eyebrow}</span>
-//         <Typography.Title level={2}>{CONTACT_TEXT.title}</Typography.Title>
-//         <p>{CONTACT_TEXT.description}</p>
-//         <Divider />
-//         <p>{CONTACT_TEXT.email}</p>
-//         <p>{CONTACT_TEXT.location}</p>
-//         <p>{CONTACT_TEXT.availability}</p>
-//       </div>
-//       <Card className={contactStyles.form}>
-//         <Input placeholder={CONTACT_TEXT.namePlaceholder} />
-//         <Input placeholder={CONTACT_TEXT.emailPlaceholder} />
-//         <Input.TextArea rows={4} placeholder={CONTACT_TEXT.messagePlaceholder} />
-//         <Button type="primary" icon={<SendOutlined />}>
-//           {CONTACT_TEXT.submit}
-//         </Button>
-//       </Card>
-//           <div className={contactStyles.right}>
-//             <img src={contactIcon} style={{ objectFit: 'contain', width: '200px', height: 'auto'}}/>
-//           </div>
-//     </section>
-//   )
-// }
-
-// export default Contact
-
-
+import type { ReactNode } from 'react';
 import { Button, Input, Typography, Row, Col, Space } from 'antd';
 import { SendOutlined, MailOutlined, EnvironmentOutlined, UserOutlined } from '@ant-design/icons';
 import { CONTACT_TEXT } from './consts';
 import { contactStyles as s } from './styles';
 import contactIcon from '../../assets/contact-icon.png';
+import './styles.css';
 
 const { Title, Text, Paragraph } = Typography;
 const { TextArea } = Input;
 
-const ContactInfoItem = ({ icon, label, value }: { icon: any, label: string, value: string }) => (
-  <div style={s.infoItem}>
-    <div style={s.iconCircle}>{icon}</div>
-    <div>
-      <Text strong style={{ display: 'block', fontSize: '14px' }}>{label}</Text>
-      <Text type="secondary">{value}</Text>
+type ContactInfoItemProps = {
+  icon: ReactNode;
+  label: string;
+  value: string;
+};
+
+function ContactInfoItem({ icon, label, value }: ContactInfoItemProps) {
+  return (
+    <div className={s.infoItem}>
+      <div className={s.iconCircle}>{icon}</div>
+      <div>
+        <Text strong className="contact-info-label" style={{ display: 'block' }}>
+          {label}
+        </Text>
+        <Text type="secondary">{value}</Text>
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
 export default function Contact() {
   return (
-    <section id="contact" style={s.section}>
+    <section id="contact" className={s.section}>
       <Row gutter={[40, 40]} align="middle">
-        
-        {/* LEFT SIDE: Info */}
         <Col xs={24} lg={8}>
-          <Text style={s.eyebrow}>{CONTACT_TEXT.eyebrow}</Text>
-          <Title level={2} style={s.title}>{CONTACT_TEXT.title}</Title>
-          <Paragraph style={s.description}>{CONTACT_TEXT.description}</Paragraph>
-          
+          <Text className={s.eyebrow}>{CONTACT_TEXT.eyebrow}</Text>
+          <Title level={2} className={s.title}>
+            {CONTACT_TEXT.title}
+          </Title>
+          <Paragraph className={s.description}>{CONTACT_TEXT.description}</Paragraph>
+
           <Space direction="vertical" size={24} style={{ width: '100%', marginTop: 20 }}>
             <ContactInfoItem icon={<MailOutlined />} label="Email" value={CONTACT_TEXT.email} />
-            <ContactInfoItem icon={<EnvironmentOutlined />} label="Location" value={CONTACT_TEXT.location} />
-            <ContactInfoItem icon={<UserOutlined />} label="Availability" value={CONTACT_TEXT.availability} />
+            <ContactInfoItem
+              icon={<EnvironmentOutlined />}
+              label="Location"
+              value={CONTACT_TEXT.location}
+            />
+            <ContactInfoItem
+              icon={<UserOutlined />}
+              label="Availability"
+              value={CONTACT_TEXT.availability}
+            />
           </Space>
         </Col>
 
-        {/* MIDDLE: Form */}
         <Col xs={24} lg={10}>
-          <div style={s.formWrapper}>
+          <div className={s.formWrapper}>
             <Row gutter={[16, 16]}>
               <Col xs={24} sm={12}>
-                <Input placeholder={CONTACT_TEXT.namePlaceholder} style={s.input} />
+                <Input placeholder={CONTACT_TEXT.namePlaceholder} className={s.input} />
               </Col>
               <Col xs={24} sm={12}>
-                <Input placeholder={CONTACT_TEXT.emailPlaceholder} style={s.input} />
+                <Input placeholder={CONTACT_TEXT.emailPlaceholder} className={s.input} />
               </Col>
               <Col span={24}>
-                <TextArea rows={5} placeholder={CONTACT_TEXT.messagePlaceholder} style={s.input} />
+                <TextArea
+                  rows={5}
+                  placeholder={CONTACT_TEXT.messagePlaceholder}
+                  className={s.input}
+                />
               </Col>
             </Row>
-            <Button type="primary" icon={<SendOutlined />} style={s.submitBtn}>
+            <Button type="primary" icon={<SendOutlined />} className={s.submitBtn}>
               {CONTACT_TEXT.submit}
             </Button>
           </div>
         </Col>
+
         <Col xs={24} lg={6} style={{ textAlign: 'center', marginTop: '30px' }}>
-          <img 
-            src={contactIcon} 
-            alt="contact illustration" 
-            style={{ ...s.illustration, maxWidth: '300px' }} // Slightly smaller on mobile
+          <img
+            src={contactIcon}
+            alt="contact illustration"
+            className={s.illustration}
+            style={{ maxWidth: '300px' }}
           />
         </Col>
-
       </Row>
     </section>
   );

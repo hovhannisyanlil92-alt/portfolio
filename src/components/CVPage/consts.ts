@@ -1,10 +1,9 @@
-// src/data/cv.ts
 export const CV_TEXT = `
 # Lilit Hovhannisyan
 ### Frontend Developer
  
-📧 lilit.hovhannisyan.dev@gmail.com  
-🔗 https://github.com/hovhannisyanlil92-alt | LinkedIn  
+📧 hovhannisyan.lil.92@gmail.com 
+🔗 https://github.com/hovhannisyanlil92-alt | https://www.linkedin.com/in/lilit-hovhannisyan-729508211  
 
 ---
 
@@ -29,6 +28,8 @@ I focus on writing clean, efficient code and creating seamless user experiences 
 ### AI & Tools
 - Cursor
 - Stitch
+- Gamma
+- NotebookLm
 
 ### Tools & Others
 - Git
@@ -76,7 +77,7 @@ Profit Development Company – HTML, CSS, JS, PHP
 
 Feel free to reach out for collaboration or opportunities.
 
- lilit.hovhannisyan.dev@gmail.com  
+ hovhannisyan.lil.92@gmail.com  
  Yerevan, Armenia  
 
 ---
