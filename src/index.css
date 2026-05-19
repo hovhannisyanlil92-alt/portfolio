@@ -26,3 +26,21 @@ body {
 #root {
   min-height: 100vh;
 }
+
+.portfolio-page :focus,
+.portfolio-page :focus-visible {
+  outline: none !important;
+}
+
+.portfolio-page .ant-btn:focus,
+.portfolio-page .ant-btn:focus-visible,
+.portfolio-page .ant-input:focus,
+.portfolio-page .ant-input-affix-wrapper-focused,
+.portfolio-page .ant-select-focused .ant-select-selector,
+.portfolio-page a:focus,
+.portfolio-page a:focus-visible,
+.portfolio-page button:focus,
+.portfolio-page button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}

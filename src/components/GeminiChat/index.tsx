@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
-import { Typography, Avatar, Button, Input, Space, Card, Divider } from 'antd';
+import { Typography, Avatar, Button, Input, Space, Card, Divider, Drawer } from 'antd';
 import {
   SendOutlined,
   GithubOutlined,
   LinkedinOutlined,
   PlusOutlined,
   UserOutlined,
+  MenuOutlined,
 } from '@ant-design/icons';
 import ReactMarkdown from 'react-markdown';
 import { GEMINI_UI, INITIAL_MESSAGE } from './consts';
@@ -15,10 +16,70 @@ import './styles.css';
 
 const { Title, Text, Paragraph } = Typography;
 
+type SidebarPanelProps = {
+  avatarSize: number;
+  onLinkClick?: () => void;
+};
+
+function SidebarPanel({ avatarSize, onLinkClick }: SidebarPanelProps) {
+  return (
+    <>
+      <div className="gemini-sidebar-profile">
+        <Avatar size={avatarSize} src={GEMINI_UI.avatarSrc} className="gemini-sidebar-avatar" />
+        <Title level={3} className="gemini-sidebar-name">
+          {GEMINI_UI.name}
+        </Title>
+        <Text className="gemini-sidebar-role">{GEMINI_UI.role}</Text>
+      </div>
+
+      <div>
+        <Title level={5} className="gemini-sidebar-heading">
+          <UserOutlined /> About Me
+        </Title>
+        <Paragraph className="gemini-sidebar-text">{GEMINI_UI.aboutText}</Paragraph>
+
+        <Divider className="gemini-sidebar-divider" />
+
+        <Title level={5} className="gemini-sidebar-heading">
+          <SendOutlined /> Connect
+        </Title>
+        <Space size="middle" wrap className="gemini-sidebar-social">
+          <Button
+            className="gemini-social-icon"
+            icon={<GithubOutlined />}
+            href="https://github.com/hovhannisyanlil92-alt"
+            target="_blank"
+            onClick={onLinkClick}
+          />
+          <Button
+            className="gemini-social-icon"
+            href="https://www.linkedin.com/in/lilit-hovhannisyan-729508211"
+            target="_blank"
+            icon={<LinkedinOutlined />}
+            onClick={onLinkClick}
+          />
+          <Button
+            className="gemini-social-icon"
+            href="https://t.me/LilitHovhannisyan_dev"
+            target="_blank"
+            icon={<SendOutlined />}
+            onClick={onLinkClick}
+          />
+        </Space>
+      </div>
+
+      <Card className="gemini-sidebar-footer">
+        <Text>{GEMINI_UI.sidebarHint}</Text>
+      </Card>
+    </>
+  );
+}
+
 export default function GeminiChat() {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<ChatMessage[]>([INITIAL_MESSAGE]);
   const [loading, setLoading] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,6 +90,8 @@ export default function GeminiChat() {
     setMessages([INITIAL_MESSAGE]);
     setInput('');
   };
+
+  const closeSidebar = () => setSidebarOpen(false);
 
   const handleSend = async () => {
     if (!input.trim() || loading) return;
@@ -43,72 +106,51 @@ export default function GeminiChat() {
 
   return (
     <div className="gemini-chat-page">
-      <aside className="gemini-sidebar sidebar-container">
-        <div className="gemini-sidebar-profile">
-          <Avatar size={150} src={GEMINI_UI.avatarSrc} className="gemini-sidebar-avatar" />
-          <Title level={3} className="gemini-sidebar-name">
-            {GEMINI_UI.name}
-          </Title>
-          <Text className="gemini-sidebar-role">{GEMINI_UI.role}</Text>
-        </div>
-
-        <div>
-          <Title level={5} className="gemini-sidebar-heading">
-            <UserOutlined /> About Me
-          </Title>
-          <Paragraph className="gemini-sidebar-text">{GEMINI_UI.aboutText}</Paragraph>
-
-          <Divider className="gemini-sidebar-divider" />
-
-          <Title level={5} className="gemini-sidebar-heading">
-            <SendOutlined /> Connect
-          </Title>
-          <Space size="middle">
-            <Button
-              className="gemini-social-icon"
-              icon={<GithubOutlined />}
-              href="https://github.com/hovhannisyanlil92-alt"
-              target="_blank"
-            />
-            <Button
-             className="gemini-social-icon"
-              href="https://www.linkedin.com/in/lilit-hovhannisyan-729508211"
-              target="_blank"
-              icon={<LinkedinOutlined />}
-            />
-             <Button
-              className="gemini-social-icon"
-              href="https://t.me/LilitHovhannisyan_dev"
-              target="_blank"
-              icon={<SendOutlined />}
-            />
-
-          </Space>
-        </div>
-
-        <Card className="gemini-sidebar-footer">
-          <Text>{GEMINI_UI.sidebarHint}</Text>
-        </Card>
+      <aside className="gemini-sidebar gemini-sidebar--desktop sidebar-container">
+        <SidebarPanel avatarSize={150} />
       </aside>
+
+      <Drawer
+        title={GEMINI_UI.name}
+        placement="left"
+        open={sidebarOpen}
+        onClose={closeSidebar}
+        className="gemini-sidebar-drawer"
+        width={300}
+        destroyOnClose={false}
+      >
+        <div className="gemini-sidebar gemini-sidebar--drawer">
+          <SidebarPanel avatarSize={96} onLinkClick={closeSidebar} />
+        </div>
+      </Drawer>
 
       <main className="gemini-main">
         <header className="gemini-header">
-          <div>
-            <Title level={4} className="gemini-header-title">
-              {GEMINI_UI.chatTitle}
-            </Title>
-            <Text type="secondary" className="gemini-header-subtitle">
-              {GEMINI_UI.chatSubtitle}
-            </Text>
+          <div className="gemini-header-start">
+            <Button
+              type="text"
+              className="gemini-sidebar-toggle"
+              icon={<MenuOutlined />}
+              aria-label="Open profile sidebar"
+              onClick={() => setSidebarOpen(true)}
+            />
+            <div className="gemini-header-titles">
+              <Title level={4} className="gemini-header-title">
+                {GEMINI_UI.chatTitle}
+              </Title>
+              <Text type="secondary" className="gemini-header-subtitle">
+                {GEMINI_UI.chatSubtitle}
+              </Text>
+            </div>
           </div>
-          <Space>
+          <Space className="gemini-header-actions">
             <Button
               type="primary"
               icon={<PlusOutlined />}
               onClick={handleNewChat}
               className="gemini-new-chat-btn"
             >
-              {GEMINI_UI.newChatLabel}
+              <span className="gemini-new-chat-btn-label">{GEMINI_UI.newChatLabel}</span>
             </Button>
           </Space>
         </header>
@@ -125,7 +167,7 @@ export default function GeminiChat() {
                 </Text>
               </div>
               <div className="gemini-welcome-image welcome-image">
-                <img src={GEMINI_UI.welcomeImageSrc} alt="Lilit AI Illustration" />
+                <img src={GEMINI_UI.welcomeImageSrc} alt="AI Illustration" />
               </div>
             </div>
           )}
@@ -153,6 +195,7 @@ export default function GeminiChat() {
             onChange={(e) => setInput(e.target.value)}
             onPressEnter={handleSend}
             disabled={loading}
+            className="gemini-input-field"
           />
           <Button
             type="primary"
@@ -161,6 +204,7 @@ export default function GeminiChat() {
             onClick={handleSend}
             loading={loading}
             className="gemini-send-btn"
+            aria-label="Send message"
           />
         </div>
       </main>

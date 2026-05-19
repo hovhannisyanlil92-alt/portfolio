@@ -1,3 +1,7 @@
+import projectImg1 from '../../assets/projectImg1.png'
+import projectImg2 from '../../assets/projectImg2.png'
+import projectImg3 from '../../assets/projectImg3.png'
+
 export type Project = {
   title: string
   description: string
@@ -20,15 +24,15 @@ export const PROJECTS: Project[] = [
     tags: ['HTML/CSS', 'JavaScript', 'JQuery', 'Bootstrap'],
     link: 'https://elinamartirosyan20.github.io/',
     gitHub: 'https://github.com/ElinaMartirosyan20/ElinaMartirosyan20.github.io.git',
-    image: './src/assets/projectImg3.png',
+    image: projectImg3,
   },
   {
     title: 'Wedding Invitation Website',
     description: 'A productivity app to organize tasks and boost workflow.',
     tags: ['React', 'TypeScript', 'Ant Design'],
-    link: 'https://andranikgayane.github.io/',
-    gitHub: 'https://github.com/hovhannisyanlil92-alt/portfolio',
-    image: './src/assets/projectImg2.png',
+    link: 'https://wedding-invitation-olive-nine.vercel.app/',
+    gitHub: 'https://github.com/hovhannisyanlil92-alt/wedding-invitation',
+    image: projectImg2,
   },
   {
     title: 'Portfolio Website',
@@ -36,7 +40,7 @@ export const PROJECTS: Project[] = [
     tags: ['React', 'Ant Design', 'Gemini API'],
     link: 'https://portfolio-one-steel-94.vercel.app/',
     gitHub: 'https://github.com/hovhannisyanlil92-alt/portfolio',
-    image: './src/assets/projectImg1.png',
+    image: projectImg1,
   },
 ]
 

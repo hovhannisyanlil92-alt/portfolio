@@ -46,7 +46,7 @@ function Navbar({ isDarkMode, onToggleTheme }: NavbarProps) {
         open={isMobileMenuOpen}
         onClose={closeMobileMenu}
         className="mobile-menu-drawer"
-        width="100%"
+        width={260}
         destroyOnClose
       >
         <Menu variant="mobile" onNavigate={closeMobileMenu} />

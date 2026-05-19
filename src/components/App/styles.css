@@ -1,10 +1,17 @@
 
 .portfolio-page {
   --site-header-height: 80px;
+  position: relative;
   min-height: 100vh;
+  padding-top: var(--site-header-height, 80px);
   color: #1f1f39;
   background: linear-gradient(180deg, #f7f5ff 0%, #f6f6fb 25%, #f8f8fe 100%);
   transition: background 0.25s ease, color 0.25s ease;
+}
+
+.portfolio-page > :not(.custom-cursor-layer):not(.site-header) {
+  position: relative;
+  z-index: 2;
 }
 
 .container {
@@ -478,7 +485,21 @@
 
   .hero-right {
     order: -1;
-    height: 380px;
+    height: auto;
+    max-height: 340px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .portrait-avatar {
+    width: min(280px, 62vw);
+    height: min(280px, 62vw);
+    margin: 0 auto;
+  }
+
+  .portrait-image {
+    width: min(320px, 78vw);
+    transform: translate(-12px, -12px);
   }
 
   .projects-head {
@@ -534,15 +555,63 @@
 
   /* Responsiveness helper classes */
   @media (max-width: 768px) {
+    .hero-section {
+      padding: 12px 0 20px;
+      gap: 16px;
+    }
+
+    .hero-right {
+      max-height: 240px;
+      margin-bottom: 4px;
+    }
+
+    .portrait-avatar {
+      width: min(200px, 56vw);
+      height: min(200px, 56vw);
+    }
+
+    .portrait-image {
+      width: min(230px, 70vw);
+      transform: none;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .portfolio-page {
+      overflow-x: clip;
+    }
+
     .hero-img {
       display: none !important; /* Hide 3D girl on mobile */
     }
+
     .hide-on-mobile {
       display: none !important;
     }
+
     /* Adjust markdown text for mobile */
-    .markdown-sidebar p, .markdown-sidebar li {
+    .markdown-sidebar p,
+    .markdown-sidebar li {
       font-size: 13px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-right {
+      max-height: 200px;
+    }
+
+    .portrait-avatar {
+      width: min(168px, 50vw);
+      height: min(168px, 50vw);
+    }
+
+    .portrait-image {
+      width: min(190px, 62vw);
+    }
+
+    .hero-title {
+      font-size: clamp(30px, 9vw, 38px) !important;
     }
   }
 
@@ -562,22 +631,6 @@
 @media (min-width: 992px) {
   .portfolio-page {
     font-size: 1rem;
-  }
-
-  .menu-links a {
-    font-size: 0.95rem;
-  }
-
-  .menu-links a.active {
-    color: #6654ff !important;
-    border-bottom: 3px solid #6654ff;
-    padding-bottom: 4px;
-    font-weight: 600;
-  }
-
-  .portfolio-page.dark-mode .menu-links a.active {
-    color: #8f84ff !important;
-    border-bottom-color: #8f84ff;
   }
 
   .brand.ant-typography {

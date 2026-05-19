@@ -1,3 +1,5 @@
+import aboutPhotoGemini from '../../assets/about-photo-gemini.png'
+import cvSidebar from '../../assets/cv-sidebar.png'
 import type { ChatMessage } from './types';
 
 export const GEMINI_UI = {
@@ -14,8 +16,8 @@ export const GEMINI_UI = {
     "I'm a Frontend Developer. Feel free to ask me anything about my background, skills, or projects!",
   inputPlaceholder: 'Ask me anything...',
   thinkingLabel: 'Gemini is thinking...',
-  avatarSrc: './src/assets/about-photo-gemini.png',
-  welcomeImageSrc: '/src/assets/cv-sidebar.png',
+  avatarSrc: aboutPhotoGemini,
+  welcomeImageSrc: cvSidebar,
 } as const;
 
 export const INITIAL_MESSAGE: ChatMessage = {

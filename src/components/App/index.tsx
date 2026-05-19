@@ -9,6 +9,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import CVPage from '../CVPage';
 import GeminiChat from '../GeminiChat';
 import Home from '../Home';
+import MouseEffect from '../MouseEffect';
 import Navbar from '../Navbar';
 import { APP_FOOTER } from './consts';
 import './styles.css';
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <div id="cover-photo" className={`portfolio-page ${isDarkMode ? 'dark-mode' : ''}`}>
+      <MouseEffect isDarkMode={isDarkMode} />
       <Navbar isDarkMode={isDarkMode} onToggleTheme={() => setIsDarkMode((prev) => !prev)} />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -37,7 +39,6 @@ function App() {
             <GithubOutlined />
             <LinkedinOutlined />
             <SendOutlined />
-            <BehanceOutlined />
           </div>
         </div>
       </footer>

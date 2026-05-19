@@ -1,3 +1,8 @@
+import cursorIcon from '../../assets/skills/cursor.svg'
+import figmaIcon from '../../assets/skills/figma.svg'
+import illustratorIcon from '../../assets/skills/illustrator.svg'
+import stitchIcon from '../../assets/skills/stitch.png'
+
 export type SkillItem = {
   name: string;
   icon: string;
@@ -26,8 +31,8 @@ export const SKILL_GROUPS = [
     title: 'AI',
     groupIcon: 'https://cdn-icons-png.flaticon.com/512/2103/2103633.png',
     items: [
-      { name: 'Cursor', icon: 'https://cdn.simpleicons.org/cursor' },
-      { name: 'Stitch', icon: 'https://img.shields.io/badge/stitch-000000?style=for-the-badge&logo=google&logoColor=white' },
+      { name: 'Cursor', icon: cursorIcon },
+      { name: 'Stitch', icon: stitchIcon },
     ],
   },
   {
@@ -37,9 +42,9 @@ export const SKILL_GROUPS = [
       { name: 'Git', icon: 'https://cdn.simpleicons.org/git/F05032' },
       { name: 'GitHub', icon: 'https://cdn.simpleicons.org/github/181717' },
       { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
-      { name: 'Figma', icon: 'https://cdn.simpleicons.org/figma/F24E1E' },
+      { name: 'Figma', icon: figmaIcon },
       { name: 'Photoshop', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg' },
-      { name: 'Illustrator', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg' },
+      { name: 'Illustrator', icon: illustratorIcon },
     ],
   },
 ];

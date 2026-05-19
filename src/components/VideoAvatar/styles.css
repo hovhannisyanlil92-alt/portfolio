@@ -87,3 +87,34 @@
     height: 450px;
   }
 }
+
+/* Medium screens (tablet) — wider video */
+@media (min-width: 768px) and (max-width: 992px) {
+  .video-avatar-card {
+    padding: 28px 12px;
+  }
+
+  .video-avatar-media {
+    width: calc(100% + 24px);
+    max-width: calc(100vw - 40px);
+    margin-inline: auto;
+  }
+
+  .video-avatar-video {
+    height: min(52vw, 540px);
+    min-height: 420px;
+  }
+}
+
+/* Medium screens (small desktop) — give video column more width */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .video-avatar-card {
+    grid-template-columns: minmax(280px, 0.95fr) minmax(480px, 1.15fr);
+    gap: 24px;
+    padding: 32px;
+  }
+
+  .video-avatar-video {
+    height: 480px;
+  }
+}
