@@ -12,9 +12,10 @@
   margin: 6px 0 0 !important;
 }
 
+
 .video-avatar-card {
   display: grid;
-  grid-template-columns: minmax(250px, 760px) 1fr;
+  grid-template-columns: minmax(250px, 840px) 1fr;
   gap: 30px;
   align-items: center;
   padding: 40px;
@@ -24,6 +25,7 @@
 }
 
 .video-avatar-media {
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid #ececff;
@@ -32,17 +34,54 @@
 
 .video-avatar-video {
   width: 100%;
-  height: 450px;
+  height: 330px;
   object-fit: cover;
   display: block;
 }
 
 .video-avatar-controls {
-  padding: 16px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
+  align-items: flex-end;
   justify-content: center;
-  background: #fff;
-  border-top: 1px solid #ececff;
+  padding: 0 0 16px;
+  background: transparent;
+  border: none;
+  pointer-events: none;
+}
+
+.video-avatar-play-btn.ant-btn {
+  pointer-events: auto;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  padding: 0;
+  background: transparent !important;
+  border: none;
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 44px;
+  line-height: 1;
+  transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.video-avatar-play-btn.ant-btn .anticon {
+  font-size: 44px;
+  filter: drop-shadow(0 2px 10px rgba(31, 31, 57, 0.4));
+}
+
+.video-avatar-play-btn.ant-btn:hover,
+.video-avatar-play-btn.ant-btn:focus-visible {
+  background: transparent !important;
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.video-avatar-play-btn.ant-btn:active {
+  transform: scale(0.96);
 }
 
 .video-avatar-content {
@@ -58,6 +97,10 @@
   font-size: 0.95rem;
   line-height: 1.65;
 }
+.video-avatar-title {
+  font-size: 2rem !important;
+  color: red;
+}
 
 .portfolio-page.dark-mode .video-avatar-card {
   background: #1a1f38;
@@ -69,13 +112,62 @@
   border-color: #2f365f;
 }
 
-.portfolio-page.dark-mode .video-avatar-controls {
-  background: #151a31;
-  border-top-color: #2f365f;
-}
-
 .portfolio-page.dark-mode .video-avatar-description {
   color: #b2b7d0 !important;
+}
+
+.video-avatar-card {
+    padding: 40px;
+    border-radius: 24px; 
+    background: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(174, 236, 255, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s ease;
+}
+
+.video-avatar-card:hover {
+    transform: translateY(-5px); 
+}
+
+.video-avatar-media {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    line-height: 0;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 1), 
+                0 0 20px rgba(174, 236, 255, 0.8); 
+    transition: all 0.4s ease;
+} 
+
+.video-avatar-media:hover {
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 1), 
+                0 0 30px rgba(74, 144, 226, 0.6);
+}
+
+.video-avatar-video {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.video-avatar-controls {
+    position: absolute;
+    inset: 0; 
+    display: flex;
+    align-items: bottom;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2); 
+    /* opacity: 0; */
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.video-avatar-play-btn.ant-btn:hover {
+    transform: scale(1.1);
+    background: #ffffff !important;
 }
 
 @media (max-width: 992px) {
@@ -84,7 +176,7 @@
   }
 
   .video-avatar-video {
-    height: 450px;
+    height: 330px;
   }
 }
 

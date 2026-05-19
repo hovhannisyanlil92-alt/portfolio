@@ -11,16 +11,24 @@ export type Project = {
   gitHub: string
 }
 
+export const PROJECTS_PREVIEW_COUNT = 3
+
+/** Descriptions longer than this show more/less controls */
+export const PROJECT_DESCRIPTION_MAX_LENGTH = 90
+
 export const PROJECTS_TEXT = {
   eyebrow: 'Featured projects',
   title: 'Some of my recent work',
   viewAll: 'View all projects',
+  showLess: 'Show less',
+  readMoreAria: 'Show full project description',
+  readLessAria: 'Show shorter project description',
 }
 
 export const PROJECTS: Project[] = [
   {
     title: 'Wedding Invitation Website',
-    description: 'Admin dashboard for managing products, orders and customers.',
+    description: 'This is a modern digital wedding invitation designed to provide guests with essential event details, interactive maps, and a real-time countdown to the big day. ',
     tags: ['HTML/CSS', 'JavaScript', 'JQuery', 'Bootstrap'],
     link: 'https://elinamartirosyan20.github.io/',
     gitHub: 'https://github.com/ElinaMartirosyan20/ElinaMartirosyan20.github.io.git',
@@ -28,7 +36,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: 'Wedding Invitation Website',
-    description: 'A productivity app to organize tasks and boost workflow.',
+    description: 'This is a modern digital wedding invitation designed to provide guests with essential event details, interactive maps, and a real-time countdown to the big day. ',
     tags: ['React', 'TypeScript', 'Ant Design'],
     link: 'https://wedding-invitation-olive-nine.vercel.app/',
     gitHub: 'https://github.com/hovhannisyanlil92-alt/wedding-invitation',
@@ -36,7 +44,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: 'Portfolio Website',
-    description: 'Personal portfolio website built with React and modern UI.',
+    description: 'This is a professional personal portfolio website designed to showcase a developern\'s technical skills, creative projects, and professional background. It features a clean, responsive layout with dedicated sections for project highlights, a personal bio, and direct contact information for potential employers or collaborators.',
     tags: ['React', 'Ant Design', 'Gemini API'],
     link: 'https://portfolio-one-steel-94.vercel.app/',
     gitHub: 'https://github.com/hovhannisyanlil92-alt/portfolio',

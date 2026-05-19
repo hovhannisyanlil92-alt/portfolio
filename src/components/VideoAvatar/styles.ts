@@ -6,6 +6,8 @@ export const videoAvatarStyles = {
   media: 'video-avatar-media',
   video: 'video-avatar-video',
   controls: 'video-avatar-controls',
+  playButton: 'video-avatar-play-btn',
   content: 'video-avatar-content',
   description: 'video-avatar-description',
+  title: 'video-avatar-title',
 } as const;

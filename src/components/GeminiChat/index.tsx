@@ -50,6 +50,8 @@ function SidebarPanel({ avatarSize, onLinkClick }: SidebarPanelProps) {
             href="https://github.com/hovhannisyanlil92-alt"
             target="_blank"
             onClick={onLinkClick}
+            shape="circle"
+            ghost
           />
           <Button
             className="gemini-social-icon"
@@ -57,6 +59,8 @@ function SidebarPanel({ avatarSize, onLinkClick }: SidebarPanelProps) {
             target="_blank"
             icon={<LinkedinOutlined />}
             onClick={onLinkClick}
+            shape="circle"
+            ghost
           />
           <Button
             className="gemini-social-icon"
@@ -64,6 +68,8 @@ function SidebarPanel({ avatarSize, onLinkClick }: SidebarPanelProps) {
             target="_blank"
             icon={<SendOutlined />}
             onClick={onLinkClick}
+            shape="circle"
+            ghost
           />
         </Space>
       </div>
@@ -164,6 +170,8 @@ export default function GeminiChat() {
                 </Title>
                 <Text type="secondary" className="gemini-welcome-description">
                   {GEMINI_UI.welcomeDescription}
+                  <br/><br/>
+                  Ask me anything in English or Armenian... 
                 </Text>
               </div>
               <div className="gemini-welcome-image welcome-image">

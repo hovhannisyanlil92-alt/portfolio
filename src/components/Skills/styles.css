@@ -1,0 +1,131 @@
+.skills-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-eyebrow {
+  color: #6366f1;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: clamp(11px, 0.9vw, 12px);
+  display: block;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.skills-title {
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #1f1f39;
+}
+
+.skills-card {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 20px;
+  padding: 30px;
+  height: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skills-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.skills-card-header .ant-typography {
+  margin: 0 !important;
+  color: #1f1f39;
+}
+
+.skills-group-icon {
+  width: 31px;
+  height: 31px;
+  padding: 6px;
+  background: #f5f3ff;
+  border-radius: 8px;
+  object-fit: contain;
+  transition: background 0.25s ease;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.skills-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.skills-icon-box {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.skills-icon {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.skills-skill-name {
+  font-size: clamp(8px, 0.8vw, 10px);
+  color: #8c8c8c;
+  line-height: 1.2;
+  transition: color 0.25s ease;
+}
+
+.portfolio-page.dark-mode .skills-eyebrow {
+  color: #a7aeff;
+}
+
+.portfolio-page.dark-mode .skills-title,
+.portfolio-page.dark-mode .skills-card-header .ant-typography {
+  color: #f0f2ff !important;
+}
+
+.portfolio-page.dark-mode .skills-card {
+  background: #1a1f38;
+  border-color: #2f365f;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.portfolio-page.dark-mode .skills-group-icon {
+  background: #2b335c;
+}
+
+.portfolio-page.dark-mode .skills-skill-name {
+  color: #b2b7d0;
+}
+
+@media (min-width: 992px) {
+  #skills .ant-typography h4 {
+    font-size: 1.15rem !important;
+  }
+
+  #skills .skills-title.ant-typography {
+    font-size: 1.9rem !important;
+  }
+
+  #skills .skills-skill-name {
+    font-size: 11px !important;
+  }
+}

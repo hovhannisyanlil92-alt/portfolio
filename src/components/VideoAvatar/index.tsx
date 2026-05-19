@@ -30,7 +30,7 @@ function VideoAvatar() {
          <div className={videoAvatarStyles.content}>
            <header className={videoAvatarStyles.header}>
               <span className={videoAvatarStyles.eyebrow}>{VIDEO_AVATAR_TEXT.eyebrow}</span>
-              <Title level={2}>{VIDEO_AVATAR_TEXT.title}</Title>
+              <Title className={videoAvatarStyles.title} level={1}>{VIDEO_AVATAR_TEXT.title}</Title>
             </header>
 
           <Paragraph className={videoAvatarStyles.description}>
@@ -45,21 +45,20 @@ function VideoAvatar() {
             playsInline
             loop
             onLoadedMetadata={(e) => {
-              e.currentTarget.currentTime = 0.5;
+              e.currentTarget.currentTime = 0.4;
             }}
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
           />
           <div className={videoAvatarStyles.controls}>
             <Button
-              type="primary"
-              shape="round"
+              type="text"
+              shape="circle"
+              className={videoAvatarStyles.playButton}
               icon={isPlaying ? <PauseCircleFilled /> : <PlayCircleFilled />}
               onClick={togglePlay}
-              size="large"
-            >
-              {isPlaying ? VIDEO_AVATAR_TEXT.pauseLabel : VIDEO_AVATAR_TEXT.playLabel}
-            </Button>
+              aria-label={isPlaying ? VIDEO_AVATAR_TEXT.pauseLabel : VIDEO_AVATAR_TEXT.playLabel}
+            />
           </div>
         </div>
             

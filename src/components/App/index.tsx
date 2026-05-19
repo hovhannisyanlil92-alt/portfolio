@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import {
-  BehanceOutlined,
   GithubOutlined,
   LinkedinOutlined,
   SendOutlined,
 } from '@ant-design/icons';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { Button } from 'antd';
 import CVPage from '../CVPage';
 import GeminiChat from '../GeminiChat';
 import Home from '../Home';
@@ -36,9 +36,30 @@ function App() {
           <span className="brand">{APP_FOOTER.brand}</span>
           <p>{APP_FOOTER.tagline}</p>
           <div className="footer-links">
-            <GithubOutlined />
+            <Button
+              shape="circle"
+              icon={<GithubOutlined />}
+              href="https://github.com/hovhannisyanlil92-alt"
+              target="_blank"
+              ghost
+            />
+            <Button
+              href="https://t.me/LilitHovhannisyan_dev"
+              target="_blank"
+              shape="circle"
+              icon={<SendOutlined />}
+              ghost
+            />
+            <Button
+              href="https://www.linkedin.com/in/lilit-hovhannisyan-729508211"
+              target="_blank"
+              shape="circle"
+              icon={<LinkedinOutlined />}
+              ghost
+            />
+            {/* <GithubOutlined />
             <LinkedinOutlined />
-            <SendOutlined />
+            <SendOutlined /> */}
           </div>
         </div>
       </footer>
