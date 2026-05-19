@@ -1,5 +1,6 @@
 .projects-section .projects-grid.ant-row {
   align-items: stretch;
+  margin-bottom: 25px;
 }
 
 .projects-section .projects-grid > .ant-col {
