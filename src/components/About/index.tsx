@@ -24,7 +24,7 @@ function About() {
           ))}
         </Row>
       </div>
-    </section>
+    </section><br/>
     </div>
   )
 }

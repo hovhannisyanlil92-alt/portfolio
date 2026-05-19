@@ -140,7 +140,7 @@ export default function CVPage() {
                     <MailOutlined /> {'hovhannisyan.lil.92@gmail.com '}
                   </Text>
                   <Text className={cvStyles.headerLinkSpaced}>
-                    <GithubOutlined /> github.com
+                    {/* <GithubOutlined /> github.com */}
                   </Text>
                 </div>
               </div>

@@ -67,7 +67,11 @@ FullStack Developer – Profit Development Company (2019)
 ---
 
 ##  Certifications
-Bitschool – ReactJS, Git, GitHub 
+AGBU - React, Ant Design, Vercel, Cursor, Stitch
+
+Bitschool – ReactJS, Git, GitHub
+
+BASE studio - Adobe Photoshop, Adobe Illustrator, CorelDRAW
 
 Profit Development Company – HTML, CSS, JS, PHP  
 
