@@ -512,8 +512,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start; /* Aligns them to the top */
-    gap: 40px; /* Space between the elements */
+    align-items: flex-start; 
+    gap: 40px;
     padding: 60px 0;
   }
 
@@ -542,7 +542,6 @@
     height: auto;
   }
 
-  /* Responsive: Stack them on top of each other on mobile */
   @media (max-width: 992px) {
     .contact-section {
       flex-direction: column;
@@ -582,14 +581,13 @@
     }
 
     .hero-img {
-      display: none !important; /* Hide 3D girl on mobile */
+      display: none !important; 
     }
 
     .hide-on-mobile {
       display: none !important;
     }
 
-    /* Adjust markdown text for mobile */
     .markdown-sidebar p,
     .markdown-sidebar li {
       font-size: 13px !important;
@@ -615,7 +613,6 @@
     }
   }
 
-  /* Sidebar markdown styling for list items (skills) */
   .markdown-sidebar ul {
     padding-left: 15px;
     color: rgba(255,255,255,0.8);

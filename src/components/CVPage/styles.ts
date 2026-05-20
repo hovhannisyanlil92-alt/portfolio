@@ -1,6 +1,10 @@
 export const cvStyles = {
   page: 'cv-page',
   topBar: 'cv-top-bar',
+  scaleViewport: 'cv-scale-viewport',
+  scaleWrapper: 'cv-scale-wrapper',
+  row: 'cv-row',
+  featuresRow: 'cv-features-row',
   container: 'cv-container',
   sidebar: 'cv-sidebar',
   avatarWrapper: 'cv-avatar-wrapper',

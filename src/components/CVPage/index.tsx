@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { Row, Col, Typography, Divider, Avatar, Card, Button } from 'antd';
 import {
   MailOutlined,
@@ -13,12 +14,14 @@ import {
   DownloadOutlined,
 } from '@ant-design/icons';
 import ReactMarkdown from 'react-markdown';
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
 import { cvStyles } from './styles';
 import { parseCV } from './utils';
 import type { SectionTitleProps } from './types';
+import { downloadCvPdf } from './downloadPdf';
+import { useCvMobileScale } from './useCvMobileScale';
 import cvPage from '../../assets/cvPage.png';
+import cvAvatar from '../../assets/cvAvatar.png';
+
 import './styles.css';
 
 const { Title, Text, Paragraph } = Typography;
@@ -34,20 +37,13 @@ const SectionTitle = ({ icon, title }: SectionTitleProps) => (
 
 export default function CVPage() {
   const cv = parseCV();
+  const cvRef = useRef<HTMLDivElement>(null);
+  const scaleWrapperRef = useRef<HTMLDivElement>(null);
+  const updateScale = useCvMobileScale(cvRef, scaleWrapperRef);
 
   const handleDownload = async () => {
-    const el = document.getElementById('cv');
-    if (!el) return;
-
-    const canvas = await html2canvas(el, { scale: 2, useCORS: true });
-    const img = canvas.toDataURL('image/png');
-    const pdf = new jsPDF('p', 'mm', 'a4');
-
-    const width = 210;
-    const height = (canvas.height * width) / canvas.width;
-
-    pdf.addImage(img, 'PNG', 0, 0, width, height);
-    pdf.save('CV_Lilit_Hovhannisyan.pdf');
+    await downloadCvPdf('cv', 'CV_Lilit_Hovhannisyan.pdf');
+    updateScale();
   };
 
   return (
@@ -59,11 +55,13 @@ export default function CVPage() {
         </Button>
       </div>
 
-      <div id="cv" className={cvStyles.container}>
-        <Row>
-          <Col xs={24} md={7} className={cvStyles.sidebar}>
+      <div className={cvStyles.scaleViewport}>
+        <div ref={scaleWrapperRef} className={cvStyles.scaleWrapper}>
+          <div id="cv" ref={cvRef} className={cvStyles.container}>
+        <Row className={cvStyles.row} wrap={false}>
+          <Col flex="0 0 28%" className={cvStyles.sidebar}>
             <div className={cvStyles.avatarWrapper}>
-              <Avatar size={140} icon={<UserOutlined />} src="/assets/about-photo.png" />
+              <Avatar size={140} shape='circle' src={cvAvatar} style={{ background: 'linear-gradient(180deg, #4f5282 0%, #2d2f54 100%)'}} />
             </div>
 
             <div>
@@ -117,7 +115,7 @@ export default function CVPage() {
               </Title>
               <ReactMarkdown>{cv.languages}</ReactMarkdown>
 
-              <div className={`${cvStyles.quoteBox} hide-on-mobile`}>
+              <div className={cvStyles.quoteBox}>
                 <span className={cvStyles.quoteIcon}>“</span>
                 <Text className={cvStyles.quoteText}>
                   Passionate about building user-friendly and efficient web applications.
@@ -126,7 +124,7 @@ export default function CVPage() {
             </div>
           </Col>
 
-          <Col xs={24} md={17} className={cvStyles.mainContent}>
+          <Col flex="1 1 auto" className={cvStyles.mainContent}>
             <div className={cvStyles.heroSection}>
               <div className={cvStyles.heroText}>
                 <Title className={cvStyles.nameHeader}>
@@ -135,7 +133,7 @@ export default function CVPage() {
                   Hovhannisyan
                 </Title>
                 <Text className={cvStyles.roleSubHeader}>{cv.role}</Text>
-                <div className={`${cvStyles.headerLinks} hide-on-mobile`}>
+                <div className={cvStyles.headerLinks}>
                   <Text className={cvStyles.headerLink}>
                     <MailOutlined /> {'hovhannisyan.lil.92@gmail.com '}
                   </Text>
@@ -144,7 +142,7 @@ export default function CVPage() {
                   </Text>
                 </div>
               </div>
-              <img src={cvPage} className={`${cvStyles.heroImage} hero-img`} alt="3d avatar" />
+              <img src={cvPage} className={cvStyles.heroImage} alt="3d avatar" />
             </div>
 
             <div className={cvStyles.sectionsContainer}>
@@ -171,8 +169,8 @@ export default function CVPage() {
                 <ReactMarkdown>{cv.certifications}</ReactMarkdown>
               </div>
 
-              <Row gutter={[16, 16]} style={{ marginTop: 40 }}>
-                <Col xs={24} sm={8}>
+              <Row className={cvStyles.featuresRow} gutter={[16, 16]} style={{ marginTop: 40 }} wrap={false}>
+                <Col flex="1">
                   <Card className={cvStyles.featureCard} bordered={false}>
                     <CodeOutlined className={cvStyles.featureIcon} />
                     <Title level={5} className={cvStyles.featureTitle}>
@@ -181,7 +179,7 @@ export default function CVPage() {
                     <Text className={cvStyles.featureText}>Maintainable and scalable code.</Text>
                   </Card>
                 </Col>
-                <Col xs={24} sm={8}>
+                <Col flex="1">
                   <Card className={cvStyles.featureCard} bordered={false}>
                     <DesktopOutlined className={cvStyles.featureIcon} />
                     <Title level={5} className={cvStyles.featureTitle}>
@@ -190,7 +188,7 @@ export default function CVPage() {
                     <Text className={cvStyles.featureText}>Responsive and user-friendly.</Text>
                   </Card>
                 </Col>
-                <Col xs={24} sm={8}>
+                <Col flex="1">
                   <Card className={cvStyles.featureCard} bordered={false}>
                     <RocketOutlined className={cvStyles.featureIcon} />
                     <Title level={5} className={cvStyles.featureTitle}>
@@ -205,6 +203,8 @@ export default function CVPage() {
             </div>
           </Col>
         </Row>
+          </div>
+        </div>
       </div>
     </div>
   );

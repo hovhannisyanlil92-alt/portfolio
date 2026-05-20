@@ -126,10 +126,6 @@
     transition: transform 0.3s ease;
 }
 
-.video-avatar-card:hover {
-    transform: translateY(-5px); 
-}
-
 .video-avatar-media {
     position: relative;
     border-radius: 20px;
