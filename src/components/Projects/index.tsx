@@ -45,7 +45,7 @@ function ProjectCard({ project }: { project: Project }) {
           type="text"
           target="_blank"
           rel="noopener noreferrer"
-          href={project.gitHub}
+          href={project.link}
           icon={<ArrowRightOutlined />}
         />
       </div>

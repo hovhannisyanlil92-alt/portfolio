@@ -1,6 +1,7 @@
 import projectImg1 from '../../assets/projectImg1.png'
 import projectImg2 from '../../assets/projectImg2.png'
 import projectImg3 from '../../assets/projectImg3.png'
+import projectImg4 from '../../assets/projectImg4.png'
 
 export type Project = {
   title: string
@@ -26,6 +27,15 @@ export const PROJECTS_TEXT = {
 }
 
 export const PROJECTS: Project[] = [
+  {
+    title: 'Armenia Events',
+    description:
+      'A group project — a platform for discovering events across Armenia, including conferences, meetups, concerts, and more. Includes search, popular categories, favorites, and tools for organizers to publish events.',
+    tags: ['React', 'TypeScript', 'Supabase', 'Express'],
+    link: 'https://armenia-events.vercel.app/',
+    gitHub: 'https://github.com/ElzaHM/ArmeniaEvents',
+    image: projectImg4,
+  },
   {
     title: 'Wedding Invitation Website',
     description: 'This is a modern digital wedding invitation designed to provide guests with essential event details, interactive maps, and a real-time countdown to the big day. ',
